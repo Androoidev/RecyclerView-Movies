@@ -1,7 +1,9 @@
 package com.example.recyclerview_practice
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview_practice.adapter.MovieAdapter
@@ -18,7 +20,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.rvMovies.layoutManager = LinearLayoutManager(this)
-        binding.rvMovies.adapter = MovieAdapter(MovieProvider.movieList)
+        val manager = LinearLayoutManager(this)
+        binding.rvMovies.layoutManager = manager
+        binding.rvMovies.adapter = MovieAdapter(MovieProvider.movieList, {onItemSelected(it)})
+    }
+
+    private fun onItemSelected(movie: Movie) {
+        Toast.makeText(this,movie.movieName,Toast.LENGTH_SHORT).show()
     }
 }

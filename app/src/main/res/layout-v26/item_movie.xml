@@ -23,18 +23,19 @@
         android:id="@+id/tvMovieName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Hola"
+        android:autoSizeMaxTextSize="21sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
         android:padding="10dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:maxLines="2"
-        android:ellipsize="end"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/ivMovie"
-        app:layout_constraintHorizontal_bias="0"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Hola" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMovieYear"
